@@ -1,0 +1,145 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+	background-color: grey;
+}
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+}
+
+ul {
+    list-style: none;
+}
+
+ul li {
+	position: relative;
+	padding: 5px;
+	background: #f4f4f4;
+	margin: 5px 0;
+	text-align: left;
+	padding-left: 55px;
+	font-size: 30px;
+}
+
+.container{
+	margin: auto;
+	height: auto;
+	text-align: center;
+  	padding: 3rem 2rem;
+  	width: 60%;
+  	overflow: auto;
+}
+
+#my-form{
+	margin-top:50px;
+	background-color: black;
+	padding-bottom: 40px;
+	padding-top: 40px;
+}
+
+h1{
+	color: white;
+	font-size: 40px;
+}
+
+.msg{
+	color: red;
+	padding: 5px;
+	font-size: 30px;
+	margin-top: -.5em;
+
+}
+
+#title,{
+	width: 80%;
+	height: 40px;
+	position: relative;
+	display: none;
+}
+
+
+input{
+	font-size:25px;
+	padding: 10px;
+	border: none;
+	width: 60%;
+}
+
+input#title{
+	margin-left: -5em;
+}
+
+/*close button style on todolist item*/
+.deleteBtn {
+    position: absolute;
+    right: 0;
+    top: 0;
+    border:none;
+    font-size:30px;
+    padding: 12px 16px 12px 16px;
+}
+.deleteBtn:hover{
+	cursor: pointer;
+	color: red;
+}
+
+/*to display tick mark style in todolist item*/
+.complete_btn{
+	position:absolute;
+	left:0;
+	top:0;
+	border: none;
+    padding: 10px 16px 10px 16px;
+    color: transparent;
+    cursor: pointer;
+    font-size: 29px;
+}
+
+/*to strike the todo list item*/
+.completedItem{
+	background-color: #0db5a7;
+    text-decoration: line-through;
+    color:white;
+    width:104%;
+    transform: scale(0.96);
+    margin-left: -.75em;
+}
+li.completedItem button{
+	background-color: #0db5a7;
+	color:white;
+}
+
+/*style for add button*/
+.btn{
+	position: absolute;
+	width: 8%;
+	height: 50px;
+	background-color: grey;
+	font-size: 25px;
+	transition: 0.3s;
+	border-radius: 0;
+	padding: 10px 20px 10px 20px;
+	
+}
+.btn:hover {
+    background: #444;
+    cursor: pointer;
+}
+
+/*style for removeall button*/
+.btn1{
+	background-color: black;
+	color:white;
+	font-size: 45px;
+	font-weight: bold;
+	width: 35%;
+	margin-top: 100px;
+}
+.btn1:hover {
+    background: #444;
+    cursor: pointer;
+}
