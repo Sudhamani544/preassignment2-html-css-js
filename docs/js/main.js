@@ -3,6 +3,7 @@ const myForm = document.querySelector('#my-form');
 const msg = document.querySelector('.msg');
 const todoList = document.querySelector('#todos');
 const removeTodo=document.querySelector('.btn1');
+const div=document.querySelector("#appendchild");
 
 myForm.addEventListener('submit', onAdd); //to add items on todolist
 todoList.addEventListener('click',onClick); //to remove or crosscheck items on todolist
@@ -14,13 +15,12 @@ function onAdd(e){
 	if(todoInput.value === ''){
 		msg.innerHTML = 'please enter a task to add';
 
-		// Remove error after 3 seconds
+		// Remove error after 5 seconds
     	setTimeout(() => msg.remove(), 5000)
 
 	}else {
 		const li=document.createElement('li');
 		li.appendChild(document.createTextNode(`${todoInput.value}`));
-		
 		//append check button to todolist item of li
 		const completedButton = document.createElement('button');
 	    completedButton.innerHTML = "\u2713";
@@ -36,6 +36,8 @@ function onAdd(e){
 
 		//append li element to todoList
 		todoList.appendChild(li);
+		console.log(todoList)
+
 
 		//clear Fields
 		todoInput.value='';
@@ -47,7 +49,7 @@ function onClick(e){
 	//remove the item from todolist
 	if(item.classList[0]==='deleteBtn'){
 		const todo = item.parentElement;
-		todo.style.display="none";		
+		todo.remove();	
 	}
 	//strike the item in todolist
 	if(item.classList[0]==='complete_btn'){
@@ -62,9 +64,10 @@ function onClick(e){
 function onRemove(e){
 	const item = e.target;
 	const parentItem = item.parentElement;
-	const child = parentItem.childNodes[1]
+	const child = parentItem.childNodes[1];
 	const subchild = child.childNodes;
-	for(var i=0;i<subchild.length;i++){
-		subchild[i].style.display = "none";
+	for(var i=subchild.length-1;i>=0;i--){
+		console.log(subchild[i]);
+		subchild[i].remove();
 	}
 }
